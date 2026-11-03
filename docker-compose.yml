@@ -6,9 +6,5 @@ services:
       - "8090:80"
     volumes:
       - .:/var/www/html
-    networks:
-      - microservices-net
-
-networks:
-  microservices-net:
-    external: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
