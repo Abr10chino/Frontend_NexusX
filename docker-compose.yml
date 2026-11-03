@@ -1,0 +1,14 @@
+services:
+  frontend:
+    image: php:8.2-apache
+    container_name: frontend-php
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    external: true
