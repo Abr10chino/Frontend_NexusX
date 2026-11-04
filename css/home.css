@@ -1,0 +1,91 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.homeTitle {
+    color: var(--purpleAccent);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.metricsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.metricCard {
+    background-color: var(--bgSecondary);
+    border: 2px solid var(--borderColor);
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.metricCard h3 {
+    color: var(--textSecondary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.metricValue {
+    color: var(--accentColor);
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.recentSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: var(--bgSecondary);
+    border: 2px solid var(--borderColor);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.recentSection h2 {
+    color: var(--textPrimary);
+    font-size: 20px;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+.recentTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.recentTable th, 
+.recentTable td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--borderColor);
+    color: var(--textPrimary);
+    font-size: 15px;
+}
+
+.recentTable th {
+    color: var(--textSecondary);
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .metricsGrid {
+        flex-direction: row;
+    }
+}
