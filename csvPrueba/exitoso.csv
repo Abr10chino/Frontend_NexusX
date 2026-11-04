@@ -1,0 +1,6 @@
+barCode,productName,categoryId,price,stock
+BAR-301,Audífonos Inalámbricos Sony,1,450.00,20
+BAR-302,Control Pro Nintendo Switch,2,550.00,10
+BAR-303,Vinilo Rock Clásicos,3,300.00,5
+BAR-304,Balón de Fútbol Oficial,4,180.00,15
+BAR-305,Cien Años de Soledad,5,120.00,25
