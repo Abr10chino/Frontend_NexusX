@@ -1,0 +1,63 @@
+.productsContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.productsTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--textPrimary, #333);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.searchSection {
+    background-color: var(--bgPrimary, #fff);
+    border: 1px solid var(--borderColor, #ccc);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.resultsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statusSection {
+    background-color: var(--bgPrimary, #fff);
+    border: 1px solid var(--borderColor, #ccc);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--textPrimary, #333);
+}
+
+.submitButton {
+    background-color: #512da8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+    background-color: #311b92;
+}
+
+@media (min-width: 1024px) {
+    .productsTitle {
+        text-align: left;
+    }
+}

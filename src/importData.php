@@ -6,6 +6,7 @@
         ["title" => "Inicio", "url" => "../index.php"],
         ["title" => "Importar CSV", "url" => "src/import.php"],
         ["title" => "Ver Importaciones", "url" => "src/importData.php"],
+        ["title" => "Ver Productos", "url" => "src/products.php"]
     ];
 
     $extraCss = [$basePath . "css/importData.css"];
