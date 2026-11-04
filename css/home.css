@@ -1,91 +1,149 @@
 .homeContainer {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    padding: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 32px auto;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .homeTitle {
     color: var(--purpleAccent);
     font-size: 28px;
     font-weight: bold;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 0 0 32px 0;
 }
 
 .metricsGrid {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 32px 0;
 }
 
 .metricCard {
     background-color: var(--bgSecondary);
     border: 2px solid var(--borderColor);
     border-radius: 8px;
-    padding: 32px;
+    width: 65%;
+    height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    flex: 1;
+    margin: 0 auto 24px auto;
 }
 
 .metricCard h3 {
     color: var(--textSecondary);
     font-size: 18px;
     font-weight: bold;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 0 0 16px 0;
 }
 
 .metricValue {
     color: var(--accentColor);
     font-size: 42px;
     font-weight: bold;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 0;
 }
 
 .recentSection {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    width: 100%;
+    height: auto;
     background-color: var(--bgSecondary);
     border: 2px solid var(--borderColor);
     border-radius: 8px;
-    padding: 24px;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .recentSection h2 {
     color: var(--textPrimary);
     font-size: 20px;
+    width: 100%;
+    height: auto;
+    margin: 24px 0 16px 24px;
 }
 
 .tableContainer {
+    width: 100%;
+    height: auto;
     overflow-x: auto;
+    margin: 0;
+    padding: 20px;
 }
 
 .recentTable {
     width: 100%;
+    height: auto;
     border-collapse: collapse;
     text-align: left;
-}
-
-.recentTable th, 
-.recentTable td {
-    padding: 14px 16px;
-    border-bottom: 1px solid var(--borderColor);
-    color: var(--textPrimary);
-    font-size: 15px;
+    margin: 0;
 }
 
 .recentTable th {
+    width: auto;
+    height: 48px;
+    border-bottom: 1px solid var(--borderColor);
     color: var(--textSecondary);
+    font-size: 15px;
     font-weight: bold;
+    margin: 0;
+    text-align: left;
+}
+
+.recentTable td {
+    width: auto;
+    height: 48px;
+    border-bottom: 1px solid var(--borderColor);
+    color: var(--textPrimary);
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
 }
 
 @media (min-width: 768px) {
     .metricsGrid {
         flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .metricCard {
+        width: 45%;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .metricsGrid {
+        flex-direction: row;
+    }
+
+    .metricCard {
+        width: 40%;
+        margin: 0;
+    }
+
+    .homeTitle {
+        text-align: left;
+        margin: 0 0 32px 0;
     }
 }
