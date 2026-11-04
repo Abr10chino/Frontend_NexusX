@@ -20,7 +20,7 @@
     <section class="metricsGrid">
         <section class="metricCard">
             <h3>Productos Registrados</h3>
-            <p class="metricValue">1,245</p>
+            <p class="metricValue"><?php echo $productAmount ?></p>
         </section>
         <section class="metricCard">
             <h3>Importaciones Realizadas</h3>
