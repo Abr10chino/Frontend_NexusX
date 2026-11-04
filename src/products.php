@@ -56,7 +56,14 @@
                                     <td style="padding: 10px;"><?php echo htmlspecialchars(number_format((float)($product['price'] ?? 0), 2)); ?></td>
                                     <td style="padding: 10px;"><?php echo htmlspecialchars($product['stock'] ?? ''); ?></td>
                                     <td style="padding: 10px;">
-                                        <a href="productDetail.php?id=<?php echo htmlspecialchars($product['id']); ?>" class="submitButton" style="padding: 6px 12px; font-size: 14px; text-decoration: none; display: inline-block;">Ver Detalle</a>
+                                        <?php 
+                                            $detailUrl = "products.php?";
+                                            if (!empty($searchCode)) {
+                                                $detailUrl .= "code=" . urlencode($searchCode) . "&";
+                                            }
+                                            $detailUrl .= "detailId=" . urlencode($product['id']);
+                                        ?>
+                                        <a href="<?php echo htmlspecialchars($detailUrl); ?>" class="submitButton" style="padding: 6px 12px; font-size: 14px; text-decoration: none; display: inline-block;">Ver Detalle</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -70,6 +77,36 @@
             </section>
         </section>
     </section>
+
+    <?php if (!empty($productDetailInfo)): ?>
+    <section style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <section style="background-color: white; padding: 24px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+            <h2 style="margin-top: 0; color: var(--textPrimary); border-bottom: 2px solid var(--borderColor); padding-bottom: 10px;">Detalle del Producto</h2>
+            
+            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; margin-top: 16px;">
+                <li><strong>ID:</strong> <?php echo htmlspecialchars($productDetailInfo['id'] ?? ''); ?></li>
+                <li><strong>Código (BarCode):</strong> <?php echo htmlspecialchars($productDetailInfo['barCode'] ?? ''); ?></li>
+                <li><strong>Nombre del Producto:</strong> <?php echo htmlspecialchars($productDetailInfo['productName'] ?? ''); ?></li>
+                <li><strong>Categoría:</strong> <?php echo htmlspecialchars($productDetailInfo['category']['categoryName'] ?? ''); ?></li>
+                <li><strong>Precio:</strong> Q<?php echo htmlspecialchars(number_format((float)($productDetailInfo['price'] ?? 0), 2)); ?></li>
+                <li><strong>Stock Disponible:</strong> <?php echo htmlspecialchars($productDetailInfo['stock'] ?? ''); ?></li>
+                <li><strong>Estado:</strong> <?php echo htmlspecialchars($productDetailInfo['status'] ?? ''); ?></li>
+                <li><strong>Fecha de Registro:</strong> 
+                    <?php 
+                        $rawDate = $productDetailInfo['createdAt'] ?? '';
+                        if (!empty($rawDate)) {
+                            $dateObj = new DateTime($rawDate);
+                            echo htmlspecialchars($dateObj->format('Y-m-d H:i:s'));
+                        }
+                    ?>
+                </li>
+            </ul>
+
+            <a href="products.php<?php echo !empty($searchCode) ? '?code=' . urlencode($searchCode) : ''; ?>" class="submitButton" style="display: block; text-align: center; text-decoration: none; padding: 10px;">Cerrar Ventana</a>
+        </section>
+    </section>
+    <?php endif; ?>
+
 </main>
 
 <?php
