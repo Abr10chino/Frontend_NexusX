@@ -6,7 +6,8 @@
 
     $navLinks = [
         ["title" => "Inicio", "url" => "index.php"],
-        ["title" => "Importar CSV", "url" => "src/import.php"]
+        ["title" => "Importar CSV", "url" => "src/import.php"],
+        ["title" => "Ver Importaciones", "url" => "src/importData.php"]
     ];
 
     $extraCss = [$basePath . "css/home.css"];
